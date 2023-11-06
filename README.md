@@ -1,16 +1,16 @@
-**Scraping News Headlines**
+# Scraping News Headlines
 
-**Introduction:**
+## Introduction
 
 The code presented in this documentation aims to scrape news headlines from the [Vanguard Business](https://www.vanguardngr.com/category/business) website, and preprocesses the scraped data.
 
-**Code Overview:**
+## Code Overview
 
 The code is written in R and leverages the `tidyverse` and `rvest` libraries. These libraries provide powerful tools for data manipulation and web scraping, making it possible to extract news headlines and dates from multiple pages of the [Vanguard Business](https://www.vanguardngr.com/category/business) website.
 
 Preprocessing was performed in Python using Pandas DataFrames.
 
-**Data Structure:**
+### Data Structure
 
 To organize the scraped data, we create an empty data frame named `scraped_data` with three columns:
 
@@ -20,7 +20,7 @@ To organize the scraped data, we create an empty data frame named `scraped_data`
 
 The scraped dataset consists of 1886 rows and three data.
 
-**Web Scraping Process:**
+### Web Scraping Process
 
 1. **Loop Over Multiple Pages:**
    The code scrapes data from multiple pages of the Vanguard Business website. It uses a `for` loop to iterate through page numbers from 1 to 1747. The URL of each page is constructed dynamically using the `paste0` function.
@@ -43,11 +43,12 @@ The scraped dataset consists of 1886 rows and three data.
 7. **Writing to CSV:**
    After scraping data from all the pages, the code writes the `scraped_data` data frame to a CSV file named "prices.csv" using the `write.csv` function. Row names are excluded from the CSV to keep the data clean.
 
-**Preprocessing In Python**
+## Preprocessing In Python
+
 The preprocessing is performed using the Pandas library in Python. The primary goals of this preprocessing are to remove unnecessary data, clean the date column, and save the cleaned data to a new CSV file. The preprocessing step majorly consisted of reordering the indexes and stripping the extra spaces in the date that wasn't efficiently done in R.
 
 
 
-**Conclusion:**
+## Conclusion
 
 The code successfully scrapes news headlines and associated dates from the Vanguard Business website, organizing the data into a structured format. This approach demonstrates how web scraping can be used to collect data from web pages efficiently. It provides a foundation for further analysis, research, or archiving of news headlines from the website.
